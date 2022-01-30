@@ -58,7 +58,7 @@ const useGameRowHook = () => {
       cookies.guessedWords &&
       cookies.states &&
       cookies.selectedLetters &&
-      cookies.index == index
+      parseInt(cookies.index) === index
     ) {
       setGuessedWords(cookies.guessedWords);
       setStates(cookies.states);
@@ -74,7 +74,7 @@ const useGameRowHook = () => {
         setGameFinished(true);
       }
     }
-  }, []);
+  });
   const splitedWord = word.split("");
 
   const refreshMessage = (content: string, miniSec: number = 1000) => {

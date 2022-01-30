@@ -24,7 +24,7 @@ const GameRow = () => {
     if (ref.current) {
       ref.current.focus();
     }
-  }, [ref.current]);
+  });
 
   var rows = [];
   for (var i = 0; i < SETTING.COUNT_OF_TRY; i++) {
