@@ -41,7 +41,7 @@ const useGameRowHook = () => {
   const [tryCount, setTryCount] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
   const [selectedLetters, setSelectedLetters] = useState<any>([]);
-  const [cookies, setCookie, removeCookie] = useCookies([
+  const [cookies, setCookie] = useCookies([
     "index",
     "states",
     "guessedWords",
@@ -74,7 +74,7 @@ const useGameRowHook = () => {
         setGameFinished(true);
       }
     }
-  });
+  },[index, cookies.guessedWords, cookies.states, cookies.selectedLetters, cookies.index, cookies.tryCount, cookies.number, cookies.gameFinished]);
   const splitedWord = word.split("");
 
   const refreshMessage = (content: string, miniSec: number = 1000) => {
