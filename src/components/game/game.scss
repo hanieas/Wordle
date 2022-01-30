@@ -1,0 +1,17 @@
+@import "../global/style/style-variables.scss";
+
+#game {
+  width: 100%;
+  max-width: var(--game-max-width);
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body {
+  height: 100%;
+  background-color: var(--color-background);
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}

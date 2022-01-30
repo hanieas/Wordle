@@ -1,0 +1,29 @@
+@import '../global/style/style-variables.scss';
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+    color: var(--color-tone-1);
+    border-bottom: 1px solid var(--color-tone-4);
+}
+
+header .title {
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+}
+
+button.icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 4px;
+}

@@ -1,0 +1,106 @@
+@import "../global/style/style-variables.scss";
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.display-flex {
+  display: flex;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  background-color: var(--color-background);
+  animation: SlideIn 100ms linear;
+  z-index: 2000;
+}
+
+.content {
+  position: relative;
+  color: var(--color-tone-1);
+  padding: 0 32px;
+  max-width: var(--game-max-width);
+  width: 100%;
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-container {
+  height: 100%;
+  padding:0.5em;
+}
+
+.overlay.closing {
+  animation: SlideOut 150ms linear;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+header .modal-title {
+  font-size: 20px;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+game-icon {
+  position: absolute;
+  right: 0;
+  user-select: none;
+  cursor: pointer;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .content {
+    max-width: 100%;
+    padding: 0;
+  }
+  game-icon {
+    padding: 0 16px;
+  }
+}
+
+@keyframes SlideIn {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes SlideOut {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+}

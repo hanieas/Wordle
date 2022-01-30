@@ -1,0 +1,139 @@
+@import '../global/style/style-variables.scss';
+
+.row {
+  display: flex;
+  width: 100%;
+  margin: 0 auto 8px;
+}
+
+#board {
+  height: 400px;
+  width: 350px;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+#board .row {
+  margin: 0px 2px !important;
+}
+#board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1 !important;
+  overflow: hidden;
+}
+
+.notification {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+  width: fit-content;
+  color: var(--notification-text-color);
+  background-color: var(--notification-bg-color);
+  border-radius: 5px;
+  padding: 15px;
+}
+
+#game-notification {
+  z-index: 1000;
+}
+
+:host {
+  display: inline-block;
+}
+.tile {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: bold;
+  vertical-align: middle;
+  box-sizing: border-box;
+  color: var(--tile-text-color);
+  text-transform: uppercase;
+  user-select: none;
+}
+.tile::before {
+  content: "";
+  display: inline-block;
+  padding-bottom: 100%;
+}
+
+@media (max-height: 600px) {
+  .tile {
+    font-size: 1em;
+    line-height: 1em;
+  }
+}
+
+.tile[data-state="empty"] {
+  border: 2px solid var(--color-tone-4);
+}
+.tile[data-state="tbd"] {
+  background-color: var(--color-tone-7);
+  border: 2px solid var(--color-tone-3);
+  color: var(--color-tone-1);
+}
+.tile[data-state="correct"] {
+  background-color: var(--color-correct);
+}
+.tile[data-state="present"] {
+  background-color: var(--color-present);
+}
+.tile[data-state="absent"] {
+  background-color: var(--color-absent);
+}
+
+.tile[data-animation="scale-in-center"] {
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.row[data-state="invalid"] {
+  animation-name: Shake;
+  animation-duration: 600ms;
+}
+
+@keyframes Shake {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+
+  20%,
+  80% {
+    transform: translateX(2px);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translateX(-4px);
+  }
+
+  40%,
+  60% {
+    transform: translateX(4px);
+  }
+}

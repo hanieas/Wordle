@@ -1,0 +1,32 @@
+@import "./var.scss";
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-present: var(--darkendYellow) !important;
+    --color-correct: var(--darkendGreen) !important;
+    --color-absent: var(--color-tone-4) !important;
+    --tile-text-color: var(--color-tone-1) !important ;
+    --key-text-color: var(--color-tone-1) !important;
+    --key-evaluated-text-color: var(--color-tone-1) !important ;
+    --key-bg: var(--color-tone-2) !important;
+    --modal-content-bg: var(--color-tone-7) !important;
+    --notification-text-color: var(--color-tone-7) !important;
+    --notification-bg-color: var(--color-tone-1) !important
+  }
+}
+
+:root {
+  --color-present: var(--yellow);
+  --color-correct: var(--green);
+  --color-absent: var(--color-tone-2);
+  --tile-text-color: var(--color-tone-7);
+  --key-text-color: var(--color-tone-1);
+  --key-evaluated-text-color: var(--color-tone-7);
+  --key-bg: var(--color-tone-4);
+  --key-bg-present: var(--color-present);
+  --key-bg-correct: var(--color-correct);
+  --key-bg-absent: var(--color-absent);
+  --modal-content-bg: var(--color-tone-7);
+  --color-background: var(--color-tone-7);
+  --notification-text-color: var(--color-tone-7);
+  --notification-bg-color: var(--color-tone-1) 
+}

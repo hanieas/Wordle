@@ -1,0 +1,56 @@
+@import '../global/style/style-variables.scss';
+
+:host {
+    display: inline-block;
+}
+
+.tile {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    line-height: 1rem;
+    font-weight: bold;
+    vertical-align: middle;
+    box-sizing: border-box;
+    color: var(--tile-text-color);
+    text-transform: uppercase;
+    user-select: none;
+    margin-right: 5px;
+}
+
+.tile::before {
+    content: '';
+    display: inline-block;
+}
+
+/* Allow tiles to be smaller on small screens */
+@media (max-height: 600px) {
+    .tile {
+        font-size: 1em;
+        line-height: 1em;
+    }
+}
+
+.tile[data-state='empty'] {
+    border: 2px solid var(--color-tone-4);
+}
+
+.tile[data-state='tbd'] {
+    background-color: var(--color-tone-7);
+    border: 2px solid var(--color-tone-3);
+    color: var(--color-tone-1);
+}
+
+.tile[data-state='correct'] {
+    background-color: var(--color-correct);
+}
+
+.tile[data-state='present'] {
+    background-color: var(--color-present);
+}
+
+.tile[data-state='absent'] {
+    background-color: var(--color-absent);
+}
