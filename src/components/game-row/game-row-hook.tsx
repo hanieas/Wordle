@@ -74,7 +74,16 @@ const useGameRowHook = () => {
         setGameFinished(true);
       }
     }
-  },[index, cookies.guessedWords, cookies.states, cookies.selectedLetters, cookies.index, cookies.tryCount, cookies.number, cookies.gameFinished]);
+  }, [
+    index,
+    cookies.guessedWords,
+    cookies.states,
+    cookies.selectedLetters,
+    cookies.index,
+    cookies.tryCount,
+    cookies.number,
+    cookies.gameFinished,
+  ]);
   const splitedWord = word.split("");
 
   const refreshMessage = (content: string, miniSec: number = 1000) => {

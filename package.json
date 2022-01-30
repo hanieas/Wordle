@@ -5,6 +5,7 @@
   "author": "Haniyeh Asemi",
   "email": "hanieasemi76@gmail.com",
   "private": true,
+  "homepage": "https://hanieas.github.io/Wordle",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
