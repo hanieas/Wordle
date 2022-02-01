@@ -1,5 +1,5 @@
 import GameTile from "../game-tile/game-tile";
-import { SETTING } from "../global/global";
+import { SETTING } from "../../global/global";
 import KeyBorad from "../keyboard/keyboard";
 import "./game-row.scss";
 import useGameRowHook from "./game-row-hook";

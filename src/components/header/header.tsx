@@ -1,4 +1,4 @@
-import { APP_NAME, SVGICON } from "../global/global";
+import { APP_NAME, SVGICON } from "../../global/global";
 import SvgIcon from "../svg-icons/svg-icons";
 import { IHeaderProps } from "./header-interface";
 import "./header.scss";

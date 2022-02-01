@@ -7,8 +7,8 @@ import {
   KEY_STATE,
   MESSAGE,
   SETTING,
-} from "../global/global";
-import { gameWords } from "../global/game-words";
+} from "../../global/global";
+import { gameWords } from "../../global/game-words";
 import {
   findDateDiff,
   isEvent,
@@ -49,6 +49,7 @@ const useGameRowHook = () => {
     "tryCount",
     "number",
     "gameFinished",
+    "animations",
   ]);
   const [word, setWord]: any = useState("");
   const { Difference_In_Days: index } = findDateDiff();
@@ -65,11 +66,7 @@ const useGameRowHook = () => {
       setSelectedLetters(cookies.selectedLetters);
       setTryCount(parseInt(cookies.tryCount));
       setNumber(parseInt(cookies.number));
-      setAnimations(
-        Array.from(Array(SETTING.COUNT_OF_TRY), () =>
-          new Array(SETTING.LENGTH_OF_WORD).fill(ANIMATIONS.SCALE_CENTER)
-        )
-      );
+      setAnimations(cookies.animations);
       if (parseInt(cookies.gameFinished) === 1) {
         setGameFinished(true);
       }
@@ -83,6 +80,7 @@ const useGameRowHook = () => {
     cookies.tryCount,
     cookies.number,
     cookies.gameFinished,
+    cookies.animations,
   ]);
   const splitedWord = word.split("");
 
@@ -156,7 +154,6 @@ const useGameRowHook = () => {
           } else {
             animations[tryCount].fill(ANIMATIONS.SCALE_CENTER);
             setAnimations(animations);
-
             const nextTry = tryCount + 1;
             setTryCount(nextTry);
             setNumber(0);
@@ -170,14 +167,15 @@ const useGameRowHook = () => {
               setCookie("gameFinished", 0);
             }
           }
+          setCookie("states", JSON.stringify(states));
+          setCookie("guessedWords", JSON.stringify(guessedWords));
+          setCookie("selectedLetters", JSON.stringify(selectedLetters));
+          setCookie("animations", JSON.stringify(animations));
+          setCookie("index", index);
         } else {
           refreshMessage(MESSAGE.NOT_EXIST);
         }
       }
-      setCookie("states", JSON.stringify(states));
-      setCookie("guessedWords", JSON.stringify(guessedWords));
-      setCookie("selectedLetters", JSON.stringify(selectedLetters));
-      setCookie("index", index);
     }
   };
 

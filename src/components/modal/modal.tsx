@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { SVGICON } from "../global/global";
+import { SVGICON } from "../../global/global";
 import SvgIcon from "../svg-icons/svg-icons";
 import { IModalProps } from "./modal-interface";
 import "./modal.scss";

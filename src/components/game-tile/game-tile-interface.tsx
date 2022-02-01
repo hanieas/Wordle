@@ -1,4 +1,4 @@
-import { KEY_STATE } from "../global/global";
+import { KEY_STATE } from "../../global/global";
 
 export interface IGameTile {
   state?: KEY_STATE;

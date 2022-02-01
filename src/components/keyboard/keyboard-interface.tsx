@@ -1,4 +1,4 @@
-import { LETTER_STATE } from "../global/global";
+import { LETTER_STATE } from "../../global/global";
 
 export interface IKeyboard {
     readonly selectedLetters: Array<ISelectedLetter>;

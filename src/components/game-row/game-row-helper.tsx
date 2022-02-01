@@ -1,4 +1,4 @@
-import { KEYBOARD } from "../global/global";
+import { KEYBOARD } from "../../global/global";
 import { IKeyBoardEvent } from "./game-row-interface";
 
 export const removeByAttr = function (arr: any, attr: any, value: any) {

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { CAMEL_LETTERS } from "../global/global";
+import { CAMEL_LETTERS } from "../../global/global";
 import Key from "../key/key";
 import { IKeyboard, ISelectedLetter } from "./keyboard-interface";
 import "./keyboard.scss";
