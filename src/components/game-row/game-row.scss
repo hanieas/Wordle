@@ -6,6 +6,10 @@
   margin: 0 auto 8px;
 }
 
+div:focus{
+  outline: 0px solid transparent;
+}
+
 #board {
   height: 400px;
   width: 350px;
