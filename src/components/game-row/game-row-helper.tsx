@@ -20,7 +20,7 @@ export const findDateDiff = () => {
   var firstDate = new Date("01/27/2022").setHours(0, 0, 0, 0);
   var today = new Date().setHours(0, 0, 0, 0);
   var Difference_In_Time = today - firstDate;
-  var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+  var Difference_In_Days = Math.round(Difference_In_Time / (1000 * 3600 * 24));
 
   return { Difference_In_Days, today };
 };
